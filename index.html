@@ -1116,14 +1116,14 @@
 
         </div>
     </div>
-
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Toggle Logic
+            // Mobile Menu Elements
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             
             if (menuBtn && mobileMenu) {
+                // 1. Toggle Menu when Button is clicked
                 menuBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                     if(!mobileMenu.classList.contains('hidden')) {
@@ -1131,6 +1131,15 @@
                     } else {
                         mobileMenu.classList.remove('open');
                     }
+                });
+
+                // 2. NEW: Close Menu when a Link is clicked
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('open');
+                    });
                 });
             }
 
