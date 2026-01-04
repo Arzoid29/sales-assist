@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | SalesAssist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --color-bg-main: #FFFFFF;
+            --color-bg-secondary: #F8FAFC;
+            --color-accent-orange: #F1621A;
+            --color-text-primary: #0F172A;
+            --color-text-secondary: #475569;
+            --color-border-light: #E2E8F0;
+        }
+
+        body {
+            background-color: var(--color-bg-main);
+            color: var(--color-text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- VISUAL PATTERNS --- */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+
+        /* --- ANIMATED BLOBS --- */
+        @keyframes moveBlob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: moveBlob 10s infinite alternate;
+        }
+        .blob-orange { background: rgba(241, 98, 26, 0.3); width: 400px; height: 400px; border-radius: 50%; }
+        .blob-yellow { background: rgba(255, 215, 0, 0.2); width: 300px; height: 300px; border-radius: 50%; }
+        .blob-blue { background: rgba(59, 130, 246, 0.15); width: 350px; height: 350px; border-radius: 50%; }
+
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+        
+        .btn { transition: all 0.3s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        
+        /* Mobile Menu Transition */
+        #mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+        /* Typography for Legal Text */
+        .legal-content h2 { font-size: 1.5rem; font-weight: 800; color: #0F172A; margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem; }
+        .legal-content h3 { font-size: 1.15rem; font-weight: 700; color: #334155; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .legal-content p { color: #475569; margin-bottom: 1.25rem; line-height: 1.7; font-size: 0.95rem; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #475569; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        .legal-content strong { color: #1E293B; font-weight: 700; }
+        .legal-content a { color: #F1621A; text-decoration: underline; }
+        .legal-content a:hover { color: #c2410c; }
+        .legal-caps { text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-grid-pattern">
+
+    <nav class="fixed w-full z-50 top-0 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="sales.png" alt="SalesAssist Logo" class="h-8 w-auto">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#dual-product" class="text-sm font-semibold text-slate-600 hover:text-[#F1621A] transition-colors">Products</a>
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-[#F1621A] transition-colors">Benefits</a>
+                    <a href="index.html#results" class="text-sm font-semibold text-slate-600 hover:text-[#F1621A] transition-colors">Results</a>
+                    <a href="index.html#about" class="text-sm font-semibold text-slate-600 hover:text-[#F1621A] transition-colors">About Us</a>
+                    <a href="https://calendly.com/salesasssit/30min" class="px-5 py-2.5 rounded-lg border-2 border-[#F1621A] text-[#F1621A] font-bold text-sm hover:bg-[#F1621A] hover:text-white transition-all">Book Demo</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-[#F1621A] focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+                <a href="index.html#dual-product" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#F1621A] hover:bg-orange-50">Products</a>
+                <a href="index.html#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#F1621A] hover:bg-orange-50">Benefits</a>
+                <a href="index.html#results" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#F1621A] hover:bg-orange-50">Results</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#F1621A] hover:bg-orange-50">About Us</a>
+                <a href="https://calendly.com/salesasssit/30min" class="block mt-4 px-5 py-3 rounded-lg bg-[#F1621A] text-white font-bold text-center">Book Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-24 min-h-screen">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="blob blob-orange top-20 right-0"></div>
+            <div class="blob blob-blue bottom-0 left-20"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white border border-gray-200 rounded-3xl shadow-xl p-8 md:p-16 legal-content">
+                
+                <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2">Subscription Terms of Service</h1>
+                <p class="text-sm text-slate-400 font-mono mb-10">Effective day: 01 August 2021</p>
+
+                <p>This SalesAssist Terms of Service (the “Agreement”) is between you and SalesAssist, Inc. (“SalesAssist”). If you are agreeing to this Agreement both as an individual and/or on behalf of a specified business that sells products or services (“Business”), then “Customer” or “you” means your Business, and you are binding your Business to this Agreement.</p>
+
+                <p>By selecting the checkbox stating that you agree (or similar) that is presented to you at the time of requesting an account and when signing in, or by using or accessing SalesAssist products, you are agreeing to be bound by all terms, conditions, and notices contained or referenced in this agreement. If you do not agree to this agreement, please do not use any services.</p>
+                
+                <p class="font-bold text-slate-800 bg-slate-50 p-4 rounded-lg border border-slate-200">FOR CLARITY, EACH PARTY EXPRESSLY AGREES THAT THIS AGREEMENT IS LEGALLY BINDING UPON IT. THIS AGREEMENT CONTAINS MANDATORY ARBITRATION PROVISIONS THAT REQUIRE THE USE OF ARBITRATION TO RESOLVE DISPUTES, RATHER THAN JURY TRIALS. PLEASE READ IT CAREFULLY.</p>
+
+                <h2>1. Scope of the Agreement</h2>
+                <p>This Agreement permits Customer to purchase subscriptions to online software-as-a-service products and other services from SalesAssist pursuant to executing any manual or digital SalesAssist ordering documents, online registration, order descriptions, or order confirmations referencing this Agreement (“Order Form(s)”) and sets forth the basic terms and conditions under which those products and services will be delivered. For purposes of this Agreement, an “Order Form” means a SalesAssist-approved ordering document that specifies Customer’s purchase of a subscription to a SalesAssist Solution, paid directly by the Customer or by a sponsoring party. Subject to Customer’s compliance with the terms of this Agreement, including payment by the Customer or the sponsoring party of the applicable Setup Fee and Monthly Subscription Fees (each as defined herein), SalesAssist will provide and make available to the Business and its Authorized Users the SalesAssist Solution(s) to which Customer is subscribed, as set forth on the applicable Order Form(s). Each subscription to a SalesAssist Solution is provided on an individual or “per-branch” basis, meaning that such subscription is specific to, and may only be used for and by, the individual that placed the order or a single Business location identified on the applicable Order Form (the “Business Location”). Any use of or access to the SalesAssist Solution(s) by or for any business location other than the Business Location shall be in violation of this Agreement (irrespective of whether such business location may be owned or otherwise affiliated with Business).</p>
+
+                <h2>2. SalesAssist Solutions</h2>
+                
+                <h3>2.1. Solutions Overview</h3>
+                <p>The SalesAssist or SalesAssist solutions (collectively, the “SalesAssist Solutions”), which are provided by SalesAssist, Inc., a Delaware corporation (“SalesAssist”), are a suite of software-as-a-service solutions for Businesses offered through a single platform. The solutions are designed to enable Businesses (as defined herein) to streamline the sales completion process between their salespeople and customers by providing sales completion tools that interface directly with the customer (“Sales Actions”). The SalesAssist Solutions include SalesAssist Essential, for basic sales processes; SalesAssist Advanced, for complex sales processes; SalesAssist Enterprise, which customizes a plan to the needs of the business.</p>
+                <p>The SalesAssist Solutions are intended to assist businesses in the completion of their sales by integrating our platform into their existing CRM and their other Systems of Record (“SOR”), so they can complete sales with all our completion tools (eSignatures, eForms, payments, KYC, etc) right from their CRM. The SalesAssist Solutions are not an advisory service and do not recommend or endorse any particular transaction, sales strategy or other approach to managing the sales process or Business’s process generally.</p>
+                <p>The SalesAssist Solutions are intended only to facilitate the process by which Businesses complete sales. The SalesAssist Solutions do NOT offer any advice regarding the value, costs, profit targets, quality or suitability of any particular transaction, process or sales strategy. Customer is solely and exclusively responsible for ensuring the accuracy and integrity of any data or information that may be input or otherwise loaded into any SalesAssist Solution. Customer also assumes sole and complete responsibility for any documents, forms, payments and other content and materials that may be generated by or through any SalesAssist Solution (“Generated Content”), and Customer shall ensure the accuracy and completeness of all Generated Content (including any information entered by Customer or their clients in any form, document, contract or any Generated Content) prior to submitting or otherwise making aggregating such Generated Content to any SOR or any third party.</p>
+
+                <h3>2.2. Provision of Solutions</h3>
+                <p>Each Solution is provided on a subscription basis for a set term designated on the Order Form (each, a “Subscription Term”). SalesAssist may also offer Professional Services (as defined in Section 11) related to certain Services.</p>
+
+                <h3>2.3. Access to Solutions</h3>
+                <p>Customer and its Authorized Users may access and use the Solutions solely for its own benefit and in accordance with the terms and conditions of this Agreement. Customer and its Authorized Users may access the SalesAssist Solution(s) to which Customer is subscribed through the SalesAssist website located at www.SalesAssist.io, or such successor or replacement website or URL as SalesAssist may designate for such purpose (the “SalesAssist Site”).</p>
+
+                <h3>2.4. License to Solutions</h3>
+                <p>To the extent SalesAssist provides SalesAssist Apps for use with the Solutions, subject to all of the terms and conditions of this Agreement, SalesAssist grants to Customer and its Authorized Users a limited, non-exclusive and non-transferable right and license to use and access the SalesAssist Solution(s) to which Business is subscribed and any Generated Content (as defined in Section 2.1), in each case solely for the purpose of gathering and sharing information while completing the Business’s sales for the Business Location. The license granted in this Section 2.4 includes access to basic email and chat technical support from SalesAssist with respect to the SalesAssist Solution(s).</p>
+
+                <h3>2.5. Contractors and Affiliates</h3>
+                <p>Customer may permit its Contractors and its Affiliates' employees and Contractors to serve as Authorized Users, provided Customer remains responsible for compliance by such individuals with all of the terms and conditions of this Agreement, and any use of the Services by such individuals is for the sole benefit of Customer.</p>
+
+                <h3>2.6. General Restrictions</h3>
+                <p>Neither Customer nor any Authorized User shall (and will not permit any third party to): (a) sell, rent, lease, transfer, lend, pledge, distribute, provide access to or sublicense the SalesAssist Solutions to a third party; (b) use or access any SalesAssist Solution (including any Integrated Information) or the SalesAssist Site or use or publish any Generated Content in a manner or for any purpose not expressly authorized under Section 2.3 or 2.4; (c) use the SalesAssist Solutions to provide, or incorporate the SalesAssist Solutions into, any product or service provided to a third party; (d) reverse engineer, decompile, disassemble, or otherwise seek to obtain the source code or non-public APIs to the SalesAssist Solutions; (e) copy, duplicate, reproduce or modify the SalesAssist Solutions or any Documentation, or create any derivative work from any of the foregoing.</p>
+
+                <h3>2.7. SalesAssist APIs</h3>
+                <p>If SalesAssist makes access to any APIs available as part of the SalesAssist Solutions, SalesAssist reserves the right to place limits on access to such APIs (e.g., limits on numbers of calls or requests). Further, SalesAssist may monitor Customer's usage of such APIs and limit the number of calls or requests Customer may make if SalesAssist believes that Customer's usage is in breach of this Agreement or may negatively affect the Services (or otherwise impose liability on SalesAssist).</p>
+
+                <h3>2.8. Trial Subscriptions</h3>
+                <p>If Customer receives free access or a trial or evaluation subscription to the Service (a “Trial Subscription”), then Customer may use the Services in accordance with the terms and conditions of this Agreement for a period of thirty (30) days or such other period granted by SalesAssist (the “Trial Period”). NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THIS AGREEMENT, SalesAssist WILL HAVE NO WARRANTY, INDEMNITY, SUPPORT, OR OTHER OBLIGATIONS WITH RESPECT TO TRIAL SUBSCRIPTIONS.</p>
+
+                <h2>3. Customer Data</h2>
+                <h3>3.1. Rights in Customer Data</h3>
+                <p>As between the parties, Customer will retain all right, title and interest (including any and all intellectual property rights) in and to the Customer Data as provided to SalesAssist. Subject to the terms of this Agreement, Customer hereby grants to SalesAssist a non-exclusive, worldwide, royalty-free right to use, copy, store, transmit, modify, create derivative works of and display the Customer Data solely to the extent necessary to provide the Solutions to Customer.</p>
+
+                <h3>3.2. Storage of Customer Data</h3>
+                <p>SalesAssist does not provide an archiving service. SalesAssist agrees only that it will not intentionally delete any Customer Data from any SalesAssist Solution prior to termination of Customer's applicable Subscription Term. SalesAssist expressly disclaims all other obligations with respect to storage.</p>
+
+                <h3>3.3. Aggregated Anonymous Data</h3>
+                <p>Certain data and information may be generated and collected by SalesAssist in connection with Business’s use of the SalesAssist Solution(s), which may include interactions and completion rates of shared Sales Actions with Business’s clients, information relating to sales or other transactions, usage statistics or analytics and other data and information gathered, generated or received by SalesAssist in connection with Customer’s use of the SalesAssist Solution(s) (“Aggregated Anonymous Data”).</p>
+
+                <h3>3.4. Business Inventory Data</h3>
+                <p>Customer agrees that SalesAssist and its Affiliates may receive product inventory and related data from Integrated Information sources, including, but not limited to, Business’s inventory management system or similar platform used in connection with Business sales operation.</p>
+
+                <h2>4. SMS Messaging</h2>
+                <p>4.1. By opting in to receive SMS messages from SalesAssist, you agree to the following terms:</p>
+                <p><strong>4.2. Types of Messages.</strong> You may receive messages related to customer support, account updates, service notifications, follow-ups, and other communications related to your use of the SalesAssist platform.</p>
+                <p><strong>4.3. Message Frequency.</strong> Message frequency will vary depending on your inquiry or support request. In general, you may receive multiple messages per support interaction. Msg frequency varies.</p>
+                <p><strong>4.4. Charges.</strong> Message and data rates may apply. Please check with your mobile carrier for details.</p>
+                <p><strong>4.5. Help.</strong> For help, reply HELP to any SalesAssist message. You can also contact us at <a href="mailto:support@salesassist.io">support@salesassist.io</a> or by phone at 470-766-0783.</p>
+                <p><strong>4.6. Opt-Out.</strong> To stop receiving messages, reply STOP at any time. You will receive a one-time confirmation message that you have been unsubscribed. After this, you will no longer receive SMS messages from SalesAssist unless you re-opt in.</p>
+                <p><strong>4.7. Privacy.</strong> Mobile information will not be shared with third parties/affiliates for marketing/promotional purposes. All the categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties. For more information, please review our <a href="privacy.html">Privacy Policy</a>.</p>
+
+                <h2>5. Security</h2>
+                <p>SalesAssist agrees to use commercially reasonable technical and organizational measures designed to prevent unauthorized access, use, alteration or disclosure of any Service or Customer Data. However, SalesAssist will have no responsibility for errors in transmission, unauthorized third-party access or other causes beyond SalesAssist’s control.</p>
+
+                <h2>6. Third-Party Platforms</h2>
+                <p>The SalesAssist Solutions may support integrations with certain Third-Party Platforms. In order for the SalesAssist Solutions to communicate with such Third-Party Platforms, Customer may be required to input credentials in order for the Services to access and receive relevant information from such Third-Party Platforms. By enabling use of the Services with any Third-Party Platform, Customer authorizes SalesAssist to access Customer's accounts with such Third-Party Platform for the purposes described in this Agreement.</p>
+
+                <h2>7. Ownership</h2>
+                <h3>7.1. SalesAssist Technology</h3>
+                <p>This is a subscription agreement for access to and use of the SalesAssist Solutions. Customer acknowledges that it is obtaining only a limited right to the SalesAssist Solutions and that irrespective of any use of the words “purchase”, “sale” or like terms in this Agreement, except for the rights expressly granted to Customer and its Authorized Users under Section 2.4, neither Customer nor any Authorized User shall have any right, title or interest in or to any SalesAssist Solution or any underlying technology or intellectual property comprising any SalesAssist Solution.</p>
+
+                <h3>7.2. Feedback</h3>
+                <p>Customer or any it’s Authorized Users, from time to time, may submit Feedback to SalesAssist. SalesAssist may freely use or exploit Feedback in connection with any of its products or solutions.</p>
+
+                <h2>8. Subscription Term, Fees & Payment</h2>
+                <h3>8.1. Subscription Term and Renewals</h3>
+                <p>This Agreement shall commence on the date on which Customer or any Authorized User first uses or accesses any SalesAssist Solution or signs an Order Form (whichever occurs first).</p>
+
+                <h3>8.2. Fees and Payment</h3>
+                <p>Customer shall pay to SalesAssist the fees set forth in the applicable Order Form for the SalesAssist Solution(s) to which the Customer subscribed, in exchange for the rights and licenses granted to Customer in this Agreement.</p>
+
+                <h3>8.3. Payment Via Credit Card</h3>
+                <p>By providing Credit Card information and agreeing to purchase any SalesAssist Solutions, Customer hereby authorizes SalesAssist (or its designee) to automatically charge Customer's Credit Card on the same date of each calendar month.</p>
+
+                <h3>8.4. Suspension of Service</h3>
+                <p>If Customer's account is thirty (30) days or more overdue, in addition to any of its other rights or remedies (including but not limited to any termination rights set forth herein), SalesAssist reserves the right to suspend Customer's access to the applicable SalesAssist Solutions (and any related services) without liability to Customer until such amounts are paid in full.</p>
+
+                <h2>9. Term and Termination</h2>
+                <h3>9.1. Term</h3>
+                <p>This Agreement is effective as of the Effective Date and expires on the date of expiration or termination of all Subscription Terms.</p>
+                <h3>9.2. Termination for Cause</h3>
+                <p>This Agreement may be terminated as follows: (a) by either party, immediately, upon any material breach by the other party of this Agreement which has not been cured within ten (10) days after providing written notice of such breach to the breaching party; (b) by SalesAssist, immediately, upon the filing of any bankruptcy, insolvency or other similar petition or filing by, on behalf of, or against Customer or its parent company.</p>
+                <h3>9.3. Effect of Termination</h3>
+                <p>Upon any termination or expiration of this Agreement, all rights, obligations and licenses granted to Customer and its Authorized Users hereunder shall immediately and automatically terminate.</p>
+
+                <h2>10. Limited Warranty</h2>
+                <h3>10.1. Limited Warranty</h3>
+                <p>SalesAssist warrants, for Customer's benefit only, that each SalesAssist Solution will operate in substantial conformity with the applicable Documentation.</p>
+                <h3>10.2. Warranty Disclaimer</h3>
+                <p class="font-bold text-slate-800">EXCEPT FOR THE LIMITED WARRANTY IN SECTION 9.1, ALL SERVICES AND PROFESSIONAL SERVICES ARE PROVIDED “AS IS”. SALESASSIST DOES NOT WARRANT THAT CUSTOMER'S USE OF THE SALESASSIST SOLUTIONS WILL BE UNINTERRUPTED OR ERROR-FREE.</p>
+
+                <h2>11. Support</h2>
+                <p>During the Subscription Term of each SalesAssist Solution, SalesAssist will provide Authorised Users support in accordance with SalesAssist’s Support Policy.</p>
+
+                <h2>12. Professional Services</h2>
+                <p>SalesAssist will provide the professional consulting services (“Professional Services”) purchased in the applicable Order Form.</p>
+
+                <h2>13. Limitation of Remedies and Damages</h2>
+                <h3>13.1. Consequential Damages Waiver</h3>
+                <p class="font-bold text-slate-800">SALESASSIST AND THE SALESASSIST RELATED PARTIES SHALL IN NO EVENT BE LIABLE TO CUSTOMER OR ANY OTHER PERSON FOR ANY INDIRECT, SPECIAL, EXEMPLARY, INCIDENTAL, MULTIPLE, CONSEQUENTIAL OR PUNITIVE DAMAGES.</p>
+                <h3>13.2. Liability Cap</h3>
+                <p class="font-bold text-slate-800">ADDITIONALLY, THE AGGREGATE LIABILITY OF SALESASSIST AND THE SALESASSIST RELATED PARTIES UNDER THIS AGREEMENT SHALL BE EXPRESSLY LIMITED TO AN AMOUNT EQUAL TO THREE (3) TIMES THE MONTHLY SUBSCRIPTION FEE.</p>
+
+                <h2>14. Indemnification</h2>
+                <p>Customer shall, at its expense, defend, indemnify and hold harmless SalesAssist and its Affiliates, and its and their respective Third Party Licensors and data and service providers, and the officers, employees, representatives and agents of each of the foregoing.</p>
+
+                <h2>15. Confidential Information</h2>
+                <p>Customer agrees not to disclose (or allow to be disclosed by any Authorized User or Business Representative), and not to otherwise use or allow to be used other than as set forth in this Agreement, any Confidential Information of SalesAssist, its Affiliates, or Third Party Licensors.</p>
+
+                <h2>16. General Terms</h2>
+                <h3>16.1. Assignment</h3>
+                <p>This Agreement will bind and inure to the benefit of each party's permitted successors and assigns.</p>
+                <h3>16.2. Severability</h3>
+                <p>If any provision of this Agreement will be adjudged by any court of competent jurisdiction to be unenforceable or invalid, that provision will be limited to the minimum extent necessary so that this Agreement will otherwise remain in effect.</p>
+                
+                <h3>16.3. Governing Law; Dispute Resolution</h3>
+                <p><strong>a) Direct Dispute Resolution.</strong> In the event of any dispute, claim, question, or disagreement arising from or relating to this Agreement, whether arising in contract, tort or otherwise, (“Dispute”), the parties shall first use their best efforts to resolve the Dispute. If an Initial Notice of Dispute is being sent to SalesAssist it must be emailed to <a href="mailto:legal@salesassist.io">legal@salesassist.io</a> and sent via mail to:</p>
+                <div class="bg-slate-50 border border-slate-200 p-4 my-4 rounded-lg text-sm text-slate-700 font-mono">
+                    Attn: Legal Department<br>
+                    SalesAssist<br>
+                    16 Cavalier<br>
+                    Laguna Niguel, CA, 92677
+                </div>
+                
+                <p><strong>b) Arbitration.</strong> <span class="font-bold text-slate-800">IN THE EVENT THAT A DISPUTE BETWEEN THE PARTIES CANNOT BE SETTLED THROUGH DIRECT DISPUTE RESOLUTION, AS DESCRIBED ABOVE, THE PARTIES AGREE TO SUBMIT THE DISPUTE TO BINDING ARBITRATION. BY AGREEING TO ARBITRATE, THE PARTIES AGREE TO WAIVE THEIR RIGHT TO A JURY TRIAL.</span> The arbitration shall be conducted before a single neutral arbitrator, before JAMS in Miami, Florida.</p>
+
+                <p><strong>c) Choice of Law and Jurisdiction.</strong> <span class="font-bold text-slate-800">FOR ANY CLAIM WHICH IS NOT SUBJECT TO THIS DISPUTE RESOLUTION PROVISION, CUSTOMER AGREES TO SUBMIT AND CONSENT TO THE PERSONAL AND EXCLUSIVE JURISDICTION IN, AND THE EXCLUSIVE VENUE OF, THE STATE AND FEDERAL COURTS LOCATED WITHIN DELAWARE, USA.</span></p>
+
+                <p><strong>d) Construction and Joinder.</strong> <span class="font-bold text-slate-800">THIS AGREEMENT MUST BE CONSTRUED AS IF IT WAS JOINTLY WRITTEN BY BOTH PARTIES. NO ARBITRATION OR CLAIM UNDER THIS AGREEMENT SHALL BE JOINED TO ANY OTHER ARBITRATION OR CLAIM.</span></p>
+
+                <h3>16.4. Notice</h3>
+                <p>Any notice or communication required or permitted under this Agreement will be in writing to the parties at the addresses set forth on the Order Form.</p>
+
+                <h3>16.12. Counterparts</h3>
+                <p>This Agreement may be executed in counterparts, each of which will be deemed an original and all of which together will be considered one and the same agreement.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 pt-20 pb-10 text-slate-400 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="col-span-1">
+                    <div class="flex items-center mb-6">
+                        <img src="logo.svg" alt="SalesAssist Logo" class="h-8 w-auto mr-3">
+                        <span class="text-xl font-bold text-white">SalesAssist<span class="text-[#F1621A]">.</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">AI assistance and process enforcement that make every Rep perform at their best.</p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center"><i class="fas fa-phone-alt text-[#F1621A] w-5"></i><span>470-766-0783</span></div>
+                        <div class="flex items-center"><i class="fas fa-envelope text-[#F1621A] w-5"></i><a href="mailto:help@salesassist.io" class="hover:text-white transition-colors">help@salesassist.io</a></div>
+                        <div class="flex items-start"><i class="fas fa-map-marker-alt text-[#F1621A] w-5 mt-1"></i><span>Wilmington, DE 19808</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Product</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html#dual-product" class="hover:text-white transition-colors">Sally AI (AI Assistant)</a></li>
+                        <li><a href="index.html#platform" class="hover:text-white transition-colors">Platform (Process Execution)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors" target="_blank">Privacy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors" target="_blank">Terms</a></li>
+                        <li><a href="security.html" class="hover:text-white transition-colors" target="_blank">Security Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-900 pt-8 flex justify-between items-center">
+                <p class="text-xs font-mono">© 2026 SalesAssist Inc.</p>
+                <div class="flex space-x-6"><a href="https://www.linkedin.com/company/getsalesassist" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Elements
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                // 1. Toggle Menu when Button is clicked
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    if(!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('open');
+                    } else {
+                        mobileMenu.classList.remove('open');
+                    }
+                });
+
+                // 2. NEW: Close Menu when a Link is clicked
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('open');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
