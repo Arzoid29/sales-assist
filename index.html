@@ -28,7 +28,6 @@
             background-color: var(--color-bg-main);
             color: var(--color-text-primary);
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
         }
 
         /* --- VISUAL PATTERNS --- */
@@ -300,42 +299,39 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-40 lg:pt-48 lg:pb-32 overflow-x-hidden">
+    <section class="relative pt-32 pb-40 lg:pt-48 lg:pb-32 overflow-x-hidden touch-pan-y">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="blob blob-orange top-0 right-0"></div>
             <div class="blob blob-yellow bottom-0 left-20"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-10">
-            <!-- Text Content -->
-          <div class="w-full lg:w-1/2 text-center lg:text-left relative z-30">
-                <div class="hero-animate hero-delay-100">
+            <div class="w-full lg:w-1/2 text-center lg:text-left relative z-30 pointer-events-none">
+                <div class="hero-animate hero-delay-100 pointer-events-auto">
                     <div class="nada-badge inline-block px-6 py-2 rounded-full font-extrabold text-sm md:text-base tracking-wider mb-6">
                         🏆 Award Winning: NADA '25 ATI 1ST PLACE
                     </div>
                 </div>
-                <h1 class="hero-animate text-4xl md:text-5xl lg:text-7xl font-black leading-tight mb-6 text-slate-900 tracking-tight hero-delay-200">
+                <h1 class="hero-animate text-4xl md:text-5xl lg:text-7xl font-black leading-tight mb-6 text-slate-900 tracking-tight hero-delay-200 pointer-events-auto">
                     Your AI Sales Process Assistant. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-400">From Lead to Contract.</span>
                 </h1>
-                <p class="hero-animate text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed hero-delay-300">
+                <p class="hero-animate text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed hero-delay-300 pointer-events-auto">
                     Don't just book appointments. Execute the process. SalesAssist combines your <b>AI Assistant, Sally</b>, with a <b>Process Management Platform</b> to make every rep perform like your best rep by ensuring no lead, follow-up, or deal step ever gets missed.
                 </p>
-                <div class="hero-animate flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-delay-500">
+                <div class="hero-animate flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-delay-500 pointer-events-auto">
                     <a href="https://calendly.com/salesasssit/30min" class="btn btn-primary px-8 py-4 rounded-xl font-bold text-lg text-white flex items-center justify-center shadow-orange-500/30 shadow-lg">
                         See a Live Demo
                     </a>
                 </div>
-                <div class="hero-animate mt-6 flex flex-wrap justify-center lg:justify-start gap-4 text-xs text-slate-500 font-medium font-mono hero-delay-500">
+                <div class="hero-animate mt-6 flex flex-wrap justify-center lg:justify-start gap-4 text-xs text-slate-500 font-medium font-mono hero-delay-500 pointer-events-auto">
                     <span><i class="fas fa-check text-green-500 mr-1"></i> Inside your CRM.</span>
                     <span><i class="fas fa-check text-green-500 mr-1"></i> No new logins.</span>
                 </div>
             </div>
 
-            <!-- Visual Composition (Scaled for Mobile) -->
-            <!-- Increased mobile height to h-[600px] to prevent cutoff -->
-            <div class="w-full lg:w-1/2 relative h-[600px] md:h-[650px] hero-animate hero-visual-scale hero-delay-500">
-                <!-- Platform Mockup -->
-                <div class="absolute top-0 right-0 w-[95%] md:w-[85%] h-[400px] md:h-[500px] bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden opacity-90 z-0 transform transition-transform hover:scale-[1.01] duration-500">
+            <div class="w-full lg:w-1/2 relative h-[600px] md:h-[650px] hero-animate hero-visual-scale hero-delay-500 touch-pan-y">
+                
+                <div class="absolute top-0 right-0 w-[95%] md:w-[85%] h-[400px] md:h-[500px] bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden opacity-90 z-0 transform transition-transform hover:scale-[1.01] duration-500 touch-pan-y">
                     <div class="h-10 bg-slate-50 border-b border-gray-100 flex items-center px-4 space-x-2">
                         <div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-amber-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
@@ -349,7 +345,6 @@
                                 <div><div class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">DEAL WORKFLOW</div><div class="w-32 md:w-40 h-6 bg-slate-800 rounded"></div></div>
                                 <div class="w-24 md:w-28 h-8 bg-green-100 text-green-700 rounded-full text-[10px] md:text-xs font-bold flex items-center justify-center border border-green-200 animate-[pulse_3s_infinite]"><i class="fas fa-check-circle mr-1"></i> COMPLIANT</div>
                             </div>
-                            <!-- Process Steps Visual -->
                             <div class="flex items-center justify-between mb-8 px-2 relative z-10">
                                 <div class="flex flex-col items-center"><div class="w-4 h-4 rounded-full bg-[#F1621A] mb-2 shadow-sm shadow-orange-300"></div><div class="w-8 md:w-12 h-2 bg-orange-100 rounded overflow-hidden"><div class="h-full bg-[#F1621A] w-full animate-[pulse_2s_infinite]"></div></div></div>
                                 <div class="h-0.5 w-full bg-gray-200 mx-2"></div>
@@ -379,8 +374,7 @@
                     </div>
                 </div>
 
-                <!-- Sally Chat (Fixed to align correctly - 20px up from bottom row edge) -->
-                <div class="absolute top-[280px] md:top-[300px] left-0 w-[280px] md:w-[320px] bg-white rounded-3xl border border-gray-100 sally-chat-glow flex flex-col overflow-hidden animate-[float_6s_ease-in-out_infinite] z-20 shadow-xl">
+                <div class="absolute top-[280px] md:top-[300px] left-0 w-[280px] md:w-[320px] bg-white rounded-3xl border border-gray-100 sally-chat-glow flex flex-col overflow-hidden animate-[float_6s_ease-in-out_infinite] z-20 shadow-xl touch-pan-y">
                     <div class="bg-gradient-to-r from-[#F1621A] to-orange-500 p-4 flex items-center justify-between">
                         <div class="flex items-center">
                             <div class="w-8 md:w-10 h-8 md:h-10 rounded-full bg-white/20 flex items-center justify-center text-white backdrop-blur-sm mr-3 border border-white/30"><i class="fas fa-sparkles text-xs md:text-sm"></i></div>
@@ -390,28 +384,23 @@
                     </div>
                     
                     <div class="p-4 bg-slate-50 h-[300px] md:h-[380px] flex flex-col justify-end space-y-3">
-                        <!-- Message 1 (Customer/Left) -->
                         <div class="self-start bg-white text-slate-700 p-2 md:p-3 rounded-2xl rounded-tl-sm shadow-sm border border-gray-200 text-xs max-w-[90%] font-medium msg-animate delay-msg-1">
                             I can send over my Driver's License now.
                         </div>
                         
-                        <!-- Message 2 (Sally/Right) -->
                         <div class="self-end bg-gradient-to-r from-[#F1621A] to-orange-500 text-white p-2 md:p-3 rounded-2xl rounded-tr-sm shadow-lg text-xs max-w-[90%] font-bold leading-relaxed msg-animate delay-msg-2">
                             Perfect. I've opened a secure upload link for you below.
                         </div>
                         
-                        <!-- Widget (Sally/Right) -->
                         <div class="w-full bg-white border border-orange-100 rounded-xl p-2 md:p-3 shadow-sm msg-animate delay-msg-3 hover:border-[#F1621A] transition-colors group cursor-pointer self-end">
                             <div class="flex items-center justify-between mb-2"><div class="flex items-center text-[10px] font-black text-slate-700 uppercase tracking-wider"><i class="fas fa-shield-alt text-[#F1621A] mr-1.5 text-sm"></i> SECURE UPLOAD</div><div class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse mr-1.5"></div><span class="text-[9px] font-bold text-green-600">ACTIVE LENS</span></div></div>
                             <div class="h-8 md:h-10 bg-orange-50/50 rounded-lg border border-dashed border-orange-200 flex items-center justify-center text-[#F1621A] text-xs font-bold"><i class="fas fa-camera mr-2"></i> Tap to Scan DL</div>
                         </div>
                         
-                        <!-- Message 3 (Sally/Right) -->
                         <div class="self-end bg-gradient-to-r from-[#F1621A] to-orange-500 text-white p-2 md:p-3 rounded-2xl rounded-tr-sm shadow-lg text-xs max-w-[90%] font-bold leading-relaxed msg-animate delay-msg-4">
                             Once uploaded it will sync on my side and I'll help you get pre-approved
                         </div>
                         
-                        <!-- Success (Sally/Right) -->
                         <div class="w-full bg-green-50 border border-green-200 rounded-xl p-3 flex items-center shadow-sm msg-animate delay-msg-5 self-end">
                             <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white mr-3 shadow-lg shadow-green-200/50 border border-green-400"><i class="fas fa-check text-xs"></i></div>
                             <div><div class="text-xs font-black text-green-800">SYNC COMPLETE</div><div class="text-[10px] text-green-700 font-bold font-mono mt-0.5">ID Verified • Added to Jacket</div></div>
